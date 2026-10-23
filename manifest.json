@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "CTX Baixar Videos",
+  "version": "0.44",
+  "description": "Adiciona um botao discreto para baixar videos e imagens diretamente da pagina.",
+  "permissions": [
+    "downloads",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "CTX Baixar Videos",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "capture-main-031.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "segmented.js",
+        "content.js"
+      ],
+      "all_frames": true,
+      "match_about_blank": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

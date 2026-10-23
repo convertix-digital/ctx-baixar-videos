@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CTX Baixar Videos</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="panel">
+      <header class="panel__header">
+        <span class="panel__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+            <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18v2h14v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <h1>CTX Baixar Videos</h1>
+          <p>Escolha como salvar os arquivos.</p>
+        </div>
+      </header>
+
+      <fieldset class="mode-list">
+        <legend class="sr-only">Modo de download</legend>
+
+        <label class="mode-option">
+          <input type="radio" name="downloadMode" value="saveAs">
+          <span class="mode-option__body">
+            <span class="mode-option__title">Salvar como <span class="badge">Padrao</span></span>
+            <span class="mode-option__description">Escolher pasta e nome antes. Em videos por partes, mantenha a aba aberta.</span>
+          </span>
+        </label>
+
+        <label class="mode-option">
+          <input type="radio" name="downloadMode" value="direct">
+          <span class="mode-option__body">
+            <span class="mode-option__title">Download direto</span>
+            <span class="mode-option__description">Salvar automaticamente na pasta Downloads.</span>
+          </span>
+        </label>
+      </fieldset>
+
+      <p class="status" role="status" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
